@@ -1,0 +1,67 @@
+
+<div class="login  offset-md-4" >
+<hr>
+    
+    <div class=" log col-md-8 shadow-lg p-3 mb-5 bg-white ">
+        <h4> LOGIN</h4>
+    <form #loginform="ngForm" (ngSubmit)="loginform.valid && login(loginform)">
+        <label for ="username">User Name</label>
+        <input type="text" 
+        class="form-control" 
+       
+        name="username" 
+        placeholder="Enter your email"
+        id="username"
+        
+        [ngClass]="{ 'is-invalid' : username.touched && username.invalid }"
+        [(ngModel)]="model.username"
+      #username="ngModel"
+
+        required
+        ><span class="invalid-feedback">UserName can't be blank</span>
+        <!-- valid :: {{loginform.valid}}<br>
+        invalid :: {{loginform.invalid}}<br>
+        touched :: {{ loginform.touched}}<br>
+        untouched :: {{loginform.untouched}}<br>
+        dirty ::{{ loginform.dirty}}<br>
+        pristine :: {{loginform.pristine}} -->
+        <label for ="password">Password</label>
+        <input type="password" name="password" class="form-control" 
+        id="password"
+ 
+        [(ngModel)]="model.password"
+#password="ngModel"
+        placeholder="Password"
+        [ngClass]="{ 'is-invalid' : password.touched && password.invalid }"
+        required
+        ><span class="invalid-feedback">Password can't be blank</span>
+<hr>
+
+<div class="forgot-grid">
+    <label class="remember"><input type="checkbox" name="remember"
+        id="remember"
+        
+        [(ngModel)]="model.remember"
+      #remember="ngModel"
+        >
+        
+        Remember me</label>
+    <!-- <div class="forgot">
+        <a href="#">Forgot Password?</a>
+    </div> -->
+    <div class="clearfix"> </div>
+</div>
+        <button type="submit" class="btn btn-primary btn-block"
+        [disabled]="loginform.invalid"
+      >Sign In</button>
+
+        <div class="login-page-bottom">
+            <h5> - OR -</h5>
+            <div class="social-btn"><a href="#"><i>Sign In with Facebook</i></a></div>
+            <div class="social-btn sb-two"><a href="#"><i>Sign In with Twitter</i></a></div>
+            </div>
+    </form>
+
+</div>
+
+</div>

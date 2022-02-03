@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+.cart-item
+{
+    font-size: small;
+}
+.filter
+{
+font-size: medium;
+}
+i.fa.fa-heart {
+    color: palevioletred;
+    cursor: pointer;
+}
+
+.btn-primary:disabled {
+    cursor: not-allowed;
+}

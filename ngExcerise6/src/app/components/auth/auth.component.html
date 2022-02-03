@@ -1,0 +1,84 @@
+
+    <div class="  offset-md-4">
+        
+      
+    
+
+
+
+        <hr>
+    
+    <div class=" log col-md-8 shadow-lg p-3 mb-5 bg-white ">
+        <div class="alert alert-danger" *ngIf="error">
+            <p>{{error}}</p> 
+         </div>
+        <div *ngIf="isLoading" style="text-align: center;"> 
+            <app-loadingspinner></app-loadingspinner>
+        </div>
+        
+    <form #loginform="ngForm" (ngSubmit)="loginform.valid && onSubmit(loginform)" *ngIf=!isLoading>
+        <h4> LOGIN</h4>
+        <label for ="email">User Name</label>
+        <input type="text" 
+        class="form-control" 
+       
+        name="email" 
+        placeholder="Enter your email"
+        id="email"
+        
+        [ngClass]="{ 'is-invalid' : email.touched && email.invalid }"
+        [(ngModel)]="model.email"
+      #email="ngModel"
+
+        required
+        ><span class="invalid-feedback">UserName can't be blank</span>
+        <!-- valid :: {{loginform.valid}}<br>
+        invalid :: {{loginform.invalid}}<br>
+        touched :: {{ loginform.touched}}<br>
+        untouched :: {{loginform.untouched}}<br>
+        dirty ::{{ loginform.dirty}}<br>
+        pristine :: {{loginform.pristine}} -->
+        <label for ="password">Password</label>
+        <input type="password" name="password" class="form-control" 
+        id="password"
+ 
+        [(ngModel)]="model.password"
+#password="ngModel"
+        placeholder="Password"
+        [ngClass]="{ 'is-invalid' : password.touched && password.invalid }"
+        required
+        ><span class="invalid-feedback">Password can't be blank</span>
+<hr>
+
+<div class="forgot-grid">
+    <label class="remember"><input type="checkbox" name="remember"
+        id="remember"
+        
+        [(ngModel)]="model.remember"
+      #remember="ngModel"
+        >
+        
+        Remember me</label>
+    <!-- <div class="forgot">
+        <a href="#">Forgot Password?</a>
+    </div> -->
+    <div class="clearfix"> </div>
+</div>
+        <div>
+          <button class="btn btn-primary"
+          type="submit"
+          [disabled]="!loginform.valid"
+          >{{isLoginMode ? 'Login' : 'SignUp'}}</button> |
+          <button class="btn btn-primary"
+          (click)="onSwitchmode()"
+          type="button"
+          [disabled]="loginform.invalid"
+         >Switch to {{isLoginMode ? 'SignUp' : 'Login'}}</button>
+         
+         
+         
+       
+        </div>
+      </form>
+    </div>
+ 

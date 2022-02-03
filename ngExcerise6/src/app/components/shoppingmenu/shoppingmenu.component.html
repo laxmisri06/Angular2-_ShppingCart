@@ -1,0 +1,24 @@
+
+<hr>
+
+<div class="row">
+    <div class="col-md-4">
+        <!-- <app-shoppinglist
+        (shoppingitemwasselected)="selectedshopping = $event"
+        ></app-shoppinglist> -->
+        <app-shoppinglist
+      
+        ></app-shoppinglist>
+    </div>
+    <div class="col-md-6">
+        <!-- <app-shoppingdetail
+        *ngIf="selectedshopping ; else infotext"
+        [shoppingVal]="selectedshopping"
+        
+        ></app-shoppingdetail>
+        <ng-template #infotext>
+          <p>Please select an item</p>  
+        </ng-template> -->
+        <router-outlet></router-outlet>
+    </div>
+</div>

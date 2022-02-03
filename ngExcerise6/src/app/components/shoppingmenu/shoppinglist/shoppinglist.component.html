@@ -1,0 +1,30 @@
+
+
+
+
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btn btn-success"  
+        (click)="onNewitem()"
+        
+        
+        >
+            New Item
+        </button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+
+    
+          
+    <!-- <app-shoppingitem
+    [shoppingVal] = "shoppingEl"
+    (shoppingevent)="onshoppingitemselecded(shoppingEl)"
+    ></app-shoppingitem> -->
+    <app-shoppingitem *ngFor="let shoppingEl of shopping ; let i = index"
+    [shoppingVal] = "shoppingEl"
+   [index]="i"
+    ></app-shoppingitem>
+</div>
+</div>

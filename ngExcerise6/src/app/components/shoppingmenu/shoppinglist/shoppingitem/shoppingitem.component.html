@@ -1,0 +1,24 @@
+
+
+<a class= "list-group-item.clearfix" style="cursor: pointer;"
+[routerLink]="[index]"
+routerLinkActive="active"
+>
+  <!-- <a href="#" (click)="onselected()"> -->
+<div class="card flex-md-row mb-4 box-shadow h-md-250">
+    <div class="card-body d-flex flex-column align-items-start">
+      <strong class="d-inline-block  text-primary">{{shoppingVal.name}}</strong>
+      
+      
+      <p class="card-text mb-auto">
+        {{shoppingVal.description}}</p>
+     
+    </div>
+    <div class="row">
+    <img class="card-img-right flex-auto d-none d-md-block" style="width:100%"
+    [src]="shoppingVal.imagepath"
+
+    alt="Card image cap">
+  </div>
+</div>
+</a>
